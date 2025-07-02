@@ -1,0 +1,372 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: helvetica;
+    color: white;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    /* perspective: 800px; */
+     overflow-x: hidden;
+}
+
+#nav{
+    position: fixed;
+    height: 145px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 150px;
+    gap: 50px;
+    z-index: 98;
+}
+
+#nav img{
+    height: 75px;
+}
+
+#nav h4{
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;         
+    width: 100vw;         
+    object-fit: cover;     
+    z-index: -1;           
+}
+
+
+
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    transition: all linear 0.1s;
+
+}
+
+#cursor-blur{
+    height: 400px;
+    width: 400px;
+    background-color: rgba(150, 193, 30, 0.3);
+    border-radius: 50%;
+    z-index: 99;
+    position: fixed;
+    filter: blur(80px);
+    transition: all linear 0.4s;
+}
+
+#cursor,
+#cursor-blur {
+    pointer-events: none;  /* ✅ Allows clicks to pass through */
+}
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.337);
+}
+
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1{
+    font-size: 125px;
+    font-weight: 900;
+    position: relative;
+    color: black;
+}
+
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: white;
+    top: -11px;
+    left: -11px;
+    -webkit-text-stroke: 1px #95C11E ;
+
+}
+
+#page1 h2{
+    font-size: 40px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#page1 p{
+    font-size: 23px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    width: 40%;
+}
+
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+.scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* #scroller-in-2{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+} */
+
+#scroller h4{
+    text-transform: uppercase;
+    display: inline-block;
+    font-size: 120px;
+    font-weight: 900;
+    font-family:sans-serif;
+    margin-left: 10px;
+    transition: all linear 0.4;
+    color: transparent;
+    -webkit-text-stroke: 2px #95C11E ;
+}
+
+#scroller h4:hover{
+    color: #95C11E;
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding: 0 40px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#about-us img{
+    width: 260px;
+    border-radius: 18px;
+    background-size: cover;
+}
+
+#about-us-in{
+    width: 50%px;
+    padding: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#about-us-in h3{
+    font-size: 54px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    padding-bottom: 34px;
+}
+
+#about-us-in p{
+    font-size: 18px;
+    letter-spacing: 1.8px;
+    line-height: 26px;
+}
+
+#cards-container {
+    /* background-color: red; */
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.card{
+    height: 76%;
+    width: 28%; 
+    border-radius: 18px;
+     background-size: cover;
+     background-position: center;
+     position: relative;
+     z-index: 10;
+     overflow: hidden;
+     transition: all ease 0.6s;
+}
+
+#card1{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-768x512.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#card2{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-768x768.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#card3{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-768x511.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    padding-top: 120px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+
+.card:hover .overlay{
+    opacity: 1;
+}
+
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+
+.overlay h4{
+    color: black;
+    font-size: 40px;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.overlay p{
+    color: black;
+    font-size: 18px;
+    line-height: 0.2.7in;
+}
+
+#green-div{
+    height: 30vh;
+    background: linear-gradient(to left bottom,#3fab30,#ACE022);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-size: cover;
+}
+
+#green-div h4{
+    width: 45%;
+    font-size: 27px;
+    font-weight: 900;
+    line-height: 50px;
+    text-transform: uppercase;
+    color: black;
+    /* background-color: white; */
+    text-align: center;
+}
+
+#green-div img{
+     height: 100%;
+     object-fit: cover;
+     width: 14%;
+}
+
+#page3{
+    min-height: 70vh;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#page3>p{
+    font-size: 35px;
+    font-weight: 700;
+    width: 60%;
+    text-align: center;
+    line-height: 45px;
+}
+
+#page3 img{
+    position: absolute;
+    height: 60px;
+}
+
+#page3 #colone1{
+    left: 10%;
+    top: 23%;
+}
+
+#page3 #colone2{
+    right: 9%;
+    bottom: 20%;
+}
+
+#page4{
+    height: 50vh;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+
+.elem{
+    height: 70%;
+    width: 20%;
+    overflow: hidden;
+}
+
+.elem h2{
+    height: 100%;
+    width: 100%;
+    background-color: #95C11E;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}

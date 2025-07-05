@@ -21,6 +21,20 @@ h4all.forEach(function(elem){
     })
 })
 
+var elems = document.querySelectorAll("#page4 .elem");
+
+elems.forEach(function (elem) {
+  elem.addEventListener("mouseenter", function () {
+    crsr.style.scale = 3;
+    crsr.style.border = "1px solid #fff";
+    crsr.style.backgroundColor = "transparent";
+  });
+  elem.addEventListener("mouseleave", function () {
+    crsr.style.scale = 1;
+    crsr.style.border = "0px solid #95C11E";
+    crsr.style.backgroundColor = "#95C11E";
+  });
+});
 
 
 gsap.to("#nav", {
@@ -90,7 +104,7 @@ gsap.from("#colone1",{
        scrub: 2
     }
 })
-
+ 
 gsap.from("#colone2",{
     y:-100,
     x : -100,
@@ -100,5 +114,16 @@ gsap.from("#colone2",{
         start:"top 55%",
         end:"top 45%",
        scrub: 2
+    }
+})
+
+gsap.from("#page4 h1",{
+    y:50,
+    scrollTrigger:{
+        trigger:"#page4 h1",
+        scroller:"body",
+        start:"top 79%",
+        end:"top 70%",
+        scrub:2
     }
 })
